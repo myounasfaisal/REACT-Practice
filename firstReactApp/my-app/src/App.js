@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-
-let press=1;
+import {useState} from'react'
 
 
 function handleEvent(){
   alert("You Clicked Me !!!");
 }
 function Button(){
-  return <button className="button" onClick={handleEvent}>Press Me</button>
+  return <button className="button" onClick={handleEvent}>Haven't Studied Props Yet </button>
 }
+
 
 const user={
   name:"Younas Faisal",
@@ -33,6 +33,7 @@ fruit:!true,
 
 
 function App() {
+  let [press,setPress]=useState(0);
   return (
     <div className="App">
       
@@ -50,9 +51,16 @@ function App() {
          <br/>
          <br/>
           <Button/> 
+<br/><br/>
+          <button className='button' onClick={()=>{
+            setPress(press+1);
+          }}> Click To Add !</button>
           <p>
           {press}
         </p>
+        <button className='button' onClick={()=>{
+            setPress(press-1);
+          }}> Click To Subtract !</button>
         
         </p>  
         <a
