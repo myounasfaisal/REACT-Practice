@@ -2,8 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 
 let press=1;
+
+
+function handleEvent(){
+  alert("You Clicked Me !!!");
+}
 function Button(){
-  return <button className="button">Press Me</button>
+  return <button className="button" onClick={handleEvent}>Press Me</button>
 }
 
 const user={
