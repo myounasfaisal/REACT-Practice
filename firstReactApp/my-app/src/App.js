@@ -10,6 +10,27 @@ function Button(){
   return <button className="button" onClick={handleEvent}>Haven't Studied Props Yet </button>
 }
 
+function MyButton(){
+  let [count,setCount]=useState(0);
+  return(
+    <button onClick={()=>{
+      setCount(count+1);
+    }} className='button'>
+      Change Counter Separately {count}
+    </button>
+  )
+}
+
+function ChangeValAtSameTime({count,setCount}){
+
+return(
+  <button className='button' onClick={()=>{
+    setCount(count +1)
+  }}>
+    Change Counter Together {count}
+  </button>
+)
+}
 
 const user={
   name:"Younas Faisal",
@@ -34,6 +55,7 @@ fruit:!true,
 
 function App() {
   let [press,setPress]=useState(0);
+  let [sameCount,setSameCount]=useState(0);
   return (
     <div className="App">
       
@@ -63,6 +85,14 @@ function App() {
           }}> Click To Subtract !</button>
         
         </p>  
+
+        <br/>
+          <MyButton/>
+          <MyButton/>
+          <br/>
+          <ChangeValAtSameTime count={sameCount} setCount={setSameCount}/>
+          <ChangeValAtSameTime count={sameCount} setCount={setSameCount}/>
+          <br/>
         <a
           className="App-link"
           href="https://reactjs.org"
