@@ -2,7 +2,12 @@ import React from "react";
 //props are Attributes of the JSX compnent functions we either pass props to the function and use its attributes
 // or directly destructure them and use them in the component. 
 // it is basically just like the way we use res and req in API
-export default function Card(props,{description}) {
+export default function Card(props,
+    {
+    description="Is a picture"
+    // if nothing is passed this is used
+    }
+) {
   return (
     
 <div className="max-w-sm rounded overflow-hidden shadow-lg">
