@@ -103,6 +103,7 @@ export default function Contact() {
                             <div className="flex flex-col mt-2">
                                 <label htmlFor="email" className="hidden">
                                     Email
+                                </label>
                                 <input
                                     type="email"
                                     name="email"
