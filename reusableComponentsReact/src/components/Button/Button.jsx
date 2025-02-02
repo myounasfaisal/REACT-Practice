@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button({children,bgColor='black',color='white',onClick,className,...props}) {
+function Button({children,onClick,className,...props}) {
   return (
-    <button onClick={onClick} style={{backgroundColor:bgColor,color:color}} className={`${className}`}  >
+    <button onClick={onClick} className={`${className}`}  >
 {children}
     </button>
   )
