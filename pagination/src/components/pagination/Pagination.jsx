@@ -1,10 +1,10 @@
 import React from "react";
 
 function Pagination({ postsPerPage, totalPosts, setCurrentPage, currentPage }) {
-  const totalPages = Math.max(1, Math.ceil(totalPosts / postsPerPage)); // ✅ Fixed calculation
+  const totalPages = Math.max(1, Math.ceil(totalPosts / postsPerPage)); 
 
   let pages = [];
-  for (let index = 1; index <= totalPages; index++) { // ✅ Starts from 1
+  for (let index = 1; index <= totalPages; index++) { 
     pages.push(index);
   }
 
