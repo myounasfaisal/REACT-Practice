@@ -27,7 +27,7 @@ function Posts() {
   if (isError) return <p className="text-center text-red-500">Error loading data!</p>;
 
   return (
-    <main className="flex flex-col w-full min-h-[90vh] justify-between items-center p-4">
+    <main className="flex flex-col w-full h-full justify-between items-center p-4">
       <Filter setSearchQuery={setSearchQuery} setPostsPerPage={setPostsPerPage} />
 
       {perPageCoins.map((coinData) => (
