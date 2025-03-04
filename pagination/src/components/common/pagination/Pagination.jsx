@@ -1,15 +1,15 @@
 import React from "react";
 
 function Pagination({ postsPerPage, totalPosts, setCurrentPage, currentPage }) {
-  const totalPages = Math.max(1, Math.ceil(totalPosts / postsPerPage)); 
+  const totalPages = Math.max(1, Math.ceil(totalPosts / postsPerPage));
 
   let pages = [];
-  for (let index = 1; index <= totalPages; index++) { 
+  for (let index = 1; index <= totalPages; index++) {
     pages.push(index);
   }
 
   return (
-    <div className="flex w-[80%] h-[80px] bg-blue-500 justify-center gap-2 items-center p-4 rounded-lg shadow-md">
+    <div className="flex flex-wrap w-full md:w-[80%] h-auto bg-blue-500 justify-center gap-2 items-center p-4 rounded-lg shadow-md">
       {/* Previous Button */}
       <button
         onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -19,18 +19,20 @@ function Pagination({ postsPerPage, totalPosts, setCurrentPage, currentPage }) {
         Prev
       </button>
 
-      {/* Page Numbers */}
-      {pages.map((page) => (
-        <button
-          onClick={() => setCurrentPage(page)}
-          key={page}
-          className={`p-3 rounded text-white text-xl transition-all ${
-            page === currentPage ? "bg-black" : "bg-gray-700 hover:bg-gray-900"
-          }`}
-        >
-          {page}
-        </button>
-      ))}
+      {/* Page Numbers - Scrollable on small screens */}
+      <div className="flex gap-2 overflow-x-auto px-2 scrollbar-hide">
+        {pages.map((page) => (
+          <button
+            onClick={() => setCurrentPage(page)}
+            key={page}
+            className={`p-3 rounded text-white text-xl transition-all ${
+              page === currentPage ? "bg-black" : "bg-gray-700 hover:bg-gray-900"
+            }`}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
 
       {/* Next Button */}
       <button
@@ -44,4 +46,4 @@ function Pagination({ postsPerPage, totalPosts, setCurrentPage, currentPage }) {
   );
 }
 
-export default Pagination
+export default Pagination;
